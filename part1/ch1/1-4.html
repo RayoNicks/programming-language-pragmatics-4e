@@ -1,0 +1,425 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.4 编译器和解释器 · 程序设计语言 实践之路（第四版）</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Michael L. Scott">
+        <meta name="identifier" content="978-0-12-410409-9" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1-5.html" />
+    
+    
+    <link rel="prev" href="1-3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于本书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../foreword.html">
+            
+                <a href="../../foreword.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../preface.html">
+            
+                <a href="../../preface.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第1部分 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第1章 绪论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    1.1 程序设计语言设计的艺术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    1.2 程序设计语言族谱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="1-3.html">
+            
+                <a href="1-3.html">
+            
+                    
+                    1.3 为什么学习程序设计语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.4" data-path="1-4.html">
+            
+                <a href="1-4.html">
+            
+                    
+                    1.4 编译器和解释器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="1-5.html">
+            
+                <a href="1-5.html">
+            
+                    
+                    1.5 编程环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.4 编译器和解释器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="14-&#x7F16;&#x8BD1;&#x5668;&#x548C;&#x89E3;&#x91CA;&#x5668;">1.4 &#x7F16;&#x8BD1;&#x5668;&#x548C;&#x89E3;&#x91CA;&#x5668;</h1>
+<p>(EXAMPLE 1.7 Pure compilation)&#x5728;&#x62BD;&#x8C61;&#x7684;&#x6700;&#x9AD8;&#x5C42;&#x6B21;&#x4E0A;&#xFF0C;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7A0B;&#x5E8F;&#x7684;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<!-- PICTURE -->
+<p>&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7A0B;&#x5E8F;&#x8F6C;&#x6362;&#x4E3A;&#x7B49;&#x6548;&#x7684;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#xFF08;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x673A;&#x5668;&#x8BED;&#x8A00;&#xFF09;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x65F6;&#x523B;&#x544A;&#x8BC9;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x63A7;&#x5236;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#xFF0C;&#x76EE;&#x6807;&#x7A0B;&#x5E8F;&#x63A7;&#x5236;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x7A0B;&#x5E8F;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x5176;&#x5B83;&#x9AD8;&#x7EA7;&#x7A0B;&#x5E8F;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x7684;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x3002;</p>
+<p>(EXAMPLE 1.8 Pure interpretation)&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x4E3A;&#x89E3;&#x91CA;&#x5668;&#xFF1A;</p>
+<!-- PICTURE -->
+<p>&#x4E0E;&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x540C;&#xFF0C;&#x89E3;&#x91CA;&#x5668;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E00;&#x76F4;&#x5B58;&#x5728;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x89E3;&#x91CA;&#x5668;&#x63A7;&#x5236;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x3002;&#x89E3;&#x91CA;&#x5668;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x5176;&#x201C;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x201D;&#x662F;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x3002;&#x89E3;&#x91CA;&#x5668;&#x8BFB;&#x53D6;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x5B83;&#x4EEC;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x89E3;&#x91CA;&#x6267;&#x884C;&#x6BD4;&#x7F16;&#x8BD1;&#x6267;&#x884C;&#x5177;&#x6709;&#x66F4;&#x597D;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x8BCA;&#x65AD;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x3002;&#x56E0;&#x4E3A;&#x89E3;&#x91CA;&#x5668;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x7684;&#x6E90;&#x7801;&#x7EA7;&#x8C03;&#x8BD5;&#x5668;&#x3002;&#x89E3;&#x91CA;&#x5668;&#x8FD8;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x53D8;&#x91CF;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x7C7B;&#x578B;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x4E8E;&#x6267;&#x884C;&#x7684;&#x6E90;&#x7A0B;&#x5E8F;&#x3002;&#x6709;&#x4E9B;&#x8BED;&#x8A00;&#x7279;&#x6027;&#x5728;&#x6CA1;&#x6709;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x51E0;&#x4E4E;&#x4E0D;&#x53EF;&#x80FD;&#x5B9E;&#x73B0;&#xFF1A;&#x4F8B;&#x5982;&#xFF0C;&#x5728;Lisp&#x548C;Prolog&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x4EE3;&#x7801;&#x5E76;&#x6267;&#x884C;&#x5B83;&#x4EEC;&#x3002;&#xFF08;&#x4E00;&#x4E9B;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x79CD;&#x529F;&#x80FD;&#x3002;&#xFF09;&#x5C06;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x7684;&#x51B3;&#x7B56;&#x5EF6;&#x8FDF;&#x5230;&#x8FD0;&#x884C;&#x65F6;&#x79F0;&#x4E3A;&#x5EF6;&#x8FDF;&#x7ED1;&#x5B9A;&#xFF0C;&#x5C06;&#x5728;3.1&#x8282;&#x4E2D;&#x8BA8;&#x8BBA;&#x3002;</p>
+<p>&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x7F16;&#x8BD1;&#x6267;&#x884C;&#x7684;&#x6027;&#x80FD;&#x66F4;&#x4F73;&#x3002;&#x901A;&#x5E38;&#x6765;&#x8BF4;&#xFF0C;&#x80FD;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x505A;&#x51FA;&#x7684;&#x51B3;&#x7B56;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x505A;&#x51FA;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x53D8;&#x91CF;<code>x</code>&#x7684;&#x5730;&#x5740;&#x59CB;&#x7EC8;&#x4E3A;49378&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x8BBF;&#x95EE;&#x8BE5;&#x5730;&#x5740;&#x7684;&#x673A;&#x5668;&#x6307;&#x4EE4;&#xFF0C;&#x6E90;&#x7A0B;&#x5E8F;&#x5F15;&#x7528;x&#x65F6;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x8BE5;&#x4F4D;&#x7F6E;&#x5373;&#x53EF;&#x3002;&#x53CD;&#x89C2;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5728;&#x6BCF;&#x6B21;&#x8BBF;&#x95EE;<code>x</code>&#x65F6;&#xFF0C;&#x5728;&#x8868;&#x4E2D;&#x67E5;&#x627E;<code>x</code>&#x7684;&#x5176;&#x5730;&#x5740;&#x3002;&#x7531;&#x4E8E;&#xFF08;&#x6700;&#x7EC8;&#x7248;&#x672C;&#x7684;&#xFF09;&#x7A0B;&#x5E8F;&#x53EA;&#x7F16;&#x8BD1;&#x4E00;&#x6B21;&#xFF0C;&#x6267;&#x884C;&#x591A;&#x6B21;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x5F88;&#x591A;&#x8D44;&#x6E90;&#xFF0C;&#x800C;&#x89E3;&#x91CA;&#x5668;&#x5219;&#x9700;&#x8981;&#x5728;&#x5FAA;&#x73AF;&#x7684;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#x90FD;&#x505A;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x67E5;&#x627E;&#x3002;</p>
+<p>(EXAMPLE 1.9 Mixing compilation and interpretation)&#x867D;&#x7136;&#x7F16;&#x8BD1;&#x548C;&#x89E3;&#x91CA;&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#x6709;&#x7740;&#x660E;&#x663E;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4F46;&#x5927;&#x591A;&#x6570;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x662F;&#x4E24;&#x8005;&#x7684;&#x6DF7;&#x5408;&#xFF0C;&#x901A;&#x5E38;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<!-- PICTURE -->
+<p>&#x5982;&#x679C;&#x6700;&#x521D;&#x7684;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8BF4;&#x8BED;&#x8A00;&#x662F;&#x201C;&#x89E3;&#x91CA;&#x201D;&#x7684;&#xFF1B;&#x5982;&#x679C;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8BF4;&#x8BED;&#x8A00;&#x662F;&#x201C;&#x7F16;&#x8BD1;&#x7684;&#x201D;&#x3002;&#x8FD9;&#x79CD;&#x533A;&#x522B;&#x53EF;&#x80FD;&#x4F1A;&#x4EE4;&#x4EBA;&#x6DF7;&#x6DC6;&#xFF0C;&#x56E0;&#x4E3A;&#x201C;&#x7B80;&#x5355;&#x201D;&#x548C;&#x201C;&#x590D;&#x6742;&#x201D;&#x662F;&#x4E3B;&#x89C2;&#x672F;&#x8BED;&#xFF0C;&#x800C;&#x4E14;&#x7F16;&#x8BD1;&#x5668;&#xFF08;&#x590D;&#x6742;&#x7FFB;&#x8BD1;&#x5668;&#xFF09;&#x53EF;&#x80FD;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x7531;&#x590D;&#x6742;&#x7684;&#x865A;&#x62DF;&#x673A;&#xFF08;&#x89E3;&#x91CA;&#x5668;&#xFF09;&#x6267;&#x884C;&#x2014;&#x2014;&#x4E8B;&#x5B9E;&#x4E0A;&#x8FD9;&#x5C31;&#x662F;Java&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x7FFB;&#x8BD1;&#x8FC7;&#x7A0B;&#x5BF9;&#x8BED;&#x8A00;&#x8FDB;&#x884C;&#x4E86;&#x5F7B;&#x5E95;&#x7684;&#x5206;&#x6790;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x201C;&#x673A;&#x68B0;&#x201D;&#x7684;&#x8F6C;&#x6362;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x4E2D;&#x95F4;&#x7A0B;&#x5E8F;&#x4E0E;&#x6E90;&#x7A0B;&#x5E8F;&#x6CA1;&#x6709;&#x5F88;&#x5F3A;&#x7684;&#x76F8;&#x4F3C;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#x2014;&#x2014;&#x5F7B;&#x5E95;&#x7684;&#x5206;&#x6790;&#x548C;&#x4E0D;&#x5E73;&#x51E1;&#x7684;&#x8F6C;&#x6362;&#x2014;&#x2014;&#x662F;&#x7F16;&#x8BD1;&#x7684;&#x6807;&#x5FD7;&#x3002;</p>
+<blockquote>
+<p>DESIGN &amp; IMPLEMENTATION 1.2 Compiled and interpreted languages</p>
+<p>Certain languages (e.g., Smalltalk and Python) are sometimes referred to as &#x201C;interpreted languages&#x201D; because most of their semantic error checking must be performed at run time. Certain other languages (e.g., Fortran and C) are sometimes referred to as &#x201C;compiled languages&#x201D; because almost all of their semantic error checking can be performed statically. This terminology isn&#x2019;t strictly correct: interpreters for C and Fortran can be built easily, and a compiler can generate code to perform even the most extensive dynamic semantic checks.That said, language design has a profound effect on &#x201C;compilability.&#x201D;</p>
+</blockquote>
+<p>&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x7684;&#x7B56;&#x7565;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li><p>(EXAMPLE 1.10 Preprocessing)&#x5927;&#x591A;&#x6570;&#x89E3;&#x91CA;&#x578B;&#x8BED;&#x8A00;&#x4F7F;&#x7528;&#x521D;&#x59CB;&#x7FFB;&#x8BD1;&#x5668;&#xFF08;&#x9884;&#x5904;&#x7406;&#x5668;&#xFF09;&#x6765;&#x79FB;&#x9664;&#x6CE8;&#x91CA;&#x548C;&#x7A7A;&#x683C;&#xFF0C;&#x5E76;&#x5C06;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x5272;&#x4E3A;&#x5173;&#x952E;&#x5B57;&#x3001;&#x6807;&#x8BC6;&#x7B26;&#x3001;&#x6570;&#x5B57;&#x548C;&#x7B26;&#x53F7;&#x7B49;&#x6807;&#x8BB0;&#x3002;&#x5728;&#x5B8F;&#x6C47;&#x7F16;&#x5668;&#x4E2D;&#xFF0C;&#x9884;&#x5904;&#x7406;&#x5668;&#x8FD8;&#x4F1A;&#x5C55;&#x5F00;&#x5B8F;&#x3002;&#x9884;&#x5904;&#x7406;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x5FAA;&#x73AF;&#x548C;&#x5B50;&#x4F8B;&#x7A0B;&#x7B49;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#x3002;&#x9884;&#x5904;&#x7406;&#x5668;&#x7684;&#x76EE;&#x7684;&#x662F;&#x751F;&#x6210;&#x4E00;&#x79CD;&#x53EF;&#x4EE5;&#x88AB;&#x9AD8;&#x6548;&#x89E3;&#x91CA;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>  &#x65E9;&#x671F;&#x7684;Basic&#x624B;&#x518C;&#x5EFA;&#x8BAE;&#x5220;&#x9664;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x6CE8;&#x91CA;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x5176;&#x6027;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x662F;&#x7EAF;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x7FFB;&#x8BD1;&#x529F;&#x80FD;&#xFF1A;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x65F6;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x8BFB;&#x53D6;&#xFF08;&#x7136;&#x540E;&#x5FFD;&#x7565;&#xFF09;&#x6CE8;&#x91CA;&#x3002;</p>
+</li>
+<li><p>(EXAMPLE 1.11 Library routines and linking)&#x5178;&#x578B;&#x7684;Fortran&#x5B9E;&#x73B0;&#x66F4;&#x63A5;&#x8FD1;&#x4E8E;&#x7EAF;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x5C06;Fortran&#x6E90;&#x4EE3;&#x7801;&#x7FFB;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5B83;&#x901A;&#x5E38;&#x4F9D;&#x8D56;&#x4E8E;&#x4E0D;&#x5C5E;&#x4E8E;&#x539F;&#x59CB;&#x7A0B;&#x5E8F;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x5B50;&#x7A0B;&#x5E8F;&#x5E93;&#xFF0C;&#x4F8B;&#x5982;&#x6570;&#x5B66;&#x51FD;&#x6570;&#xFF08;sin&#x3001;cos&#x3001;log&#x7B49;&#xFF09;&#x548C;I/O&#x3002;&#x7F16;&#x8BD1;&#x5668;&#x4F9D;&#x8D56;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A;&#x94FE;&#x63A5;&#x5668;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B83;&#x8D1F;&#x8D23;&#x5C06;&#x9002;&#x5F53;&#x7684;&#x5E93;&#x4F8B;&#x7A0B;&#x5408;&#x5E76;&#x5230;&#x6700;&#x7EC8;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF1A;</p>
+  <!-- PICTURE -->
+<p>  &#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#xFF0C;&#x5E93;&#x4F8B;&#x7A0B;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x786C;&#x4EF6;&#x6307;&#x4EE4;&#x96C6;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x540C;&#x65F6;&#x8BA4;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x5305;&#x62EC;&#x786C;&#x4EF6;&#x548C;&#x5E93;&#x3002;</p>
+<p>  Fortran&#x7684;&#x5E93;&#x4F8B;&#x7A0B;&#x4E2D;&#x5305;&#x542B;&#x5173;&#x4E8E;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#x7684;&#x89E3;&#x91CA;&#x3002;Fortran&#x5141;&#x8BB8;&#x4F7F;&#x7528;<code>format</code>&#x8BED;&#x53E5;&#x6765;&#x63A7;&#x5236;&#x5BF9;&#x9F50;&#x3001;&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x6709;&#x6548;&#x4F4D;&#x6570;&#x548C;&#x8868;&#x793A;&#x65B9;&#x6CD5;&#x3001;&#x524D;&#x5BFC;&#x96F6;&#x7684;&#x63A7;&#x5236;&#x7B49;&#x3002;&#x7A0B;&#x5E8F;&#x4E5F;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x81EA;&#x5DF1;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x8F93;&#x51FA;&#x5E93;&#x4F8B;&#x7A0B;&#x5305;&#x62EC;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x5316;&#x89E3;&#x91CA;&#x5668;&#x3002;&#x7C7B;&#x4F3C;&#x7684;&#x89E3;&#x91CA;&#x5668;&#x53EF;&#x4EE5;&#x5728;C&#x7684;<code>printf</code>&#x4E2D;&#x627E;&#x5230;&#x3002;</p>
+</li>
+<li><p>(EXAMPLE 1.12 Post-compilation assembly)&#x8BB8;&#x591A;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x800C;&#x4E0D;&#x662F;&#x673A;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6709;&#x52A9;&#x4E8E;&#x8C03;&#x8BD5;&#xFF0C;&#x56E0;&#x4E3A;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x66F4;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;&#x7F16;&#x8BD1;&#x5668;&#x4E0E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x9694;&#x79BB;&#x5F00;&#x3002;&#x5F53;&#x65B0;&#x7248;&#x672C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5F3A;&#x5236;&#x66F4;&#x65B0;&#x4E86;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x683C;&#x5F0F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x6539;&#x53D8;&#x7F16;&#x8BD1;&#x5668;&#xFF08;&#x53EA;&#x6709;&#x6C47;&#x7F16;&#x5668;&#x9700;&#x8981;&#x66F4;&#x6539;&#xFF0C;&#x5E76;&#x4E14;&#x7F16;&#x8BD1;&#x5668;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x5171;&#x4EAB;&#x6C47;&#x7F16;&#x5668;&#xFF09;&#xFF1A;</p>
+  <!-- PCITURE -->
+</li>
+<li><p>(EXAMPLE 1.13 The C Preprocessor)C&#x7F16;&#x8BD1;&#x5668;&#xFF08;&#x4E5F;&#x5305;&#x62EC;&#x5176;&#x5B83;&#x8FD0;&#x884C;&#x5728;Unix&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF09;&#x4F1A;&#x9996;&#x5148;&#x4F7F;&#x7528;&#x9884;&#x5904;&#x7406;&#x5668;&#x6765;&#x79FB;&#x9664;&#x6CE8;&#x91CA;&#x548C;&#x6269;&#x5C55;&#x5B8F;&#x3002;&#x9884;&#x5904;&#x7406;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x4EE3;&#x7801;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x6765;&#x4ECE;&#x4E00;&#x4EFD;&#x6E90;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x51FA;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+  <!-- PICTURE -->
+</li>
+<li><p>(EXAMPLE 1.14 Source-to-source translation)&#x5F88;&#x591A;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x8F93;&#x51FA;&#x4F9D;&#x7136;&#x662F;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#xFF08;&#x901A;&#x5E38;&#x662F;C&#x8BED;&#x8A00;&#x6216;&#x8F93;&#x5165;&#x8BED;&#x8A00;&#x7684;&#x7B80;&#x5316;&#x7248;&#x672C;&#xFF09;&#x3002;&#x8FD9;&#x79CD;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x5230;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7684;&#x8F6C;&#x6362;&#x7ECF;&#x5E38;&#x51FA;&#x73B0;&#x5728;&#x5B9E;&#x9A8C;&#x5BA4;&#x8BED;&#x8A00;&#x548C;&#x8BED;&#x8A00;&#x53D1;&#x5C55;&#x7684;&#x65E9;&#x671F;&#x9636;&#x6BB5;&#x3002;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x4F8B;&#x5B50;&#x662F;AT&amp;T&#x7684;C++&#x539F;&#x59CB;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5C3D;&#x7BA1;&#x5B83;&#x751F;&#x6210;&#x7684;&#x662F;C&#x800C;&#x4E0D;&#x662F;&#x6C47;&#x7F16;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x8FD9;&#x786E;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF1A;&#x5B83;&#x5BF9;C++&#x6E90;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x4E86;&#x5B8C;&#x6574;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x8BED;&#x4E49;&#x5206;&#x6790;&#xFF0C;&#x5E76;&#x4E14;&#x62A5;&#x544A;&#x4E86;&#x5927;&#x591A;&#x6570;&#x7684;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#x7A0B;&#x5E8F;&#x5458;&#x901A;&#x5E38;&#x4E0D;&#x77E5;&#x9053;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x80CC;&#x540E;&#x662F;&#x5426;&#x5B58;&#x5728;C&#x7F16;&#x8BD1;&#x5668;&#x3002;&#x9664;&#x975E;&#x751F;&#x6210;&#x6CA1;&#x6709;&#x9519;&#x8BEF;&#x7684;C&#x4EE3;&#x7801;&#x5E76;&#x4E14;&#x518D;&#x6B21;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x5426;&#x5219;C++&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;C&#x7F16;&#x8BD1;&#x5668;&#xFF1A;</p>
+<p>  &#x6709;&#x65F6;&#x4EBA;&#x4EEC;&#x4F1A;&#x79F0;C++&#x7F16;&#x8BD1;&#x5668;&#x4E3A;&#x9884;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x8F93;&#x51FA;&#x4E86;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002;&#x6211;&#x8BA4;&#x4E3A;&#x8FD9;&#x79CD;&#x53EB;&#x6CD5;&#x662F;&#x4E0D;&#x5BF9;&#x7684;&#xFF1A;&#x56E0;&#x4E3A;&#x7F16;&#x8BD1;&#x5668;&#x8BD5;&#x56FE;&#x201C;&#x7406;&#x89E3;&#x201D;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x9884;&#x5904;&#x7406;&#x5668;&#x6CA1;&#x6709;&#x3002;&#x9884;&#x5904;&#x7406;&#x5668;&#x57FA;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x6267;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x5F53;&#x8FD0;&#x884C;&#x5230;&#x540E;&#x7EED;&#x7684;&#x8F6C;&#x6362;&#x9636;&#x6BB5;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x8F6C;&#x6362;&#x7684;&#x8F93;&#x51FA;&#x5C06;&#x751F;&#x6210;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x3002;</p>
+</li>
+<li><p>(EXAMPLE 1.15 Bootstrapping)&#x8BB8;&#x591A;&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x662F;&#x81EA;&#x6258;&#x7BA1;&#x7684;&#xFF1A;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x7531;&#x5176;&#x6240;&#x80FD;&#x7F16;&#x8BD1;&#x7684;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x2014;&#x2014;Ada&#x8BED;&#x8A00;&#x7684;Ada&#x7F16;&#x8BD1;&#x5668;&#xFF0C;C&#x8BED;&#x8A00;&#x7684;C&#x7F16;&#x8BD1;&#x5668;&#x3002;&#x8FD9;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x660E;&#x663E;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x65F6;&#x600E;&#x4E48;&#x7F16;&#x8BD1;&#x7684;&#xFF1F;&#x7B54;&#x6848;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x79F0;&#x4E3A;&#x81EA;&#x4E3E;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x8FD9;&#x4E00;&#x672F;&#x8BED;&#x6E90;&#x4E8E;&#x4E00;&#x79CD;&#x8352;&#x8C2C;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x5373;&#x901A;&#x8FC7;&#x62C9;&#x52A8;&#x81EA;&#x5DF1;&#x7684;&#x9774;&#x5B50;&#x5C06;&#x81EA;&#x5DF1;&#x4ECE;&#x5730;&#x9762;&#x4E0A;&#x62AC;&#x8D77;&#x6765;&#x3002;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;&#xFF08;&#x901A;&#x5E38;&#x662F;&#x89E3;&#x91CA;&#x5668;&#xFF09;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5B83;&#x9010;&#x6B65;&#x6784;&#x5EFA;&#x66F4;&#x590D;&#x6742;&#x7684;&#x7248;&#x672C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x771F;&#x5B9E;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x60F3;&#x6CD5;&#x3002;</p>
+<p>  &#x8BB8;&#x591A;&#x65E9;&#x671F;&#x7684;Pascal&#x7F16;&#x8BD1;&#x5668;&#x90FD;&#x662F;&#x56F4;&#x7ED5;Niklaus Wirth&#x53D1;&#x5E03;&#x7684;&#x4E00;&#x7EC4;&#x5DE5;&#x5177;&#x6784;&#x5EFA;&#x7684;&#xFF0C;&#x8FD9;&#x7EC4;&#x5DE5;&#x5177;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<ul>
+<li><p>&#x4E00;&#x79CD;&#x7528;Pascal&#x7F16;&#x5199;&#x7684;Pascal&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5B83;&#x751F;&#x6210;P-code&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x5806;&#x6808;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x73B0;&#x4EE3;Java&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x5B57;&#x8282;&#x7801;</p>
+</li>
+<li><p>P-code&#x5F62;&#x5F0F;&#x7684;&#x4E0A;&#x8FF0;&#x7F16;&#x8BD1;&#x5668;</p>
+</li>
+<li><p>&#x7528;Pascal&#x7F16;&#x5199;&#x7684;P-code&#x89E3;&#x91CA;&#x5668;</p>
+<p>&#x4E3A;&#x4E86;&#x5728;&#x672C;&#x5730;&#x8FD0;&#x884C;Pascal&#xFF0C;&#x7528;&#x6237;&#x53EA;&#x9700;&#x5C06;P-code&#x89E3;&#x91CA;&#x5668;&#xFF08;&#x624B;&#x52A8;&#xFF09;&#x7FFB;&#x8BD1;&#x6210;&#x67D0;&#x79CD;&#x53EF;&#x7528;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x8FD9;&#x9879;&#x7FFB;&#x8BD1;&#x5DE5;&#x4F5C;&#x5E76;&#x4E0D;&#x56F0;&#x96BE;&#xFF0C;&#x56E0;&#x4E3A;&#x89E3;&#x91CA;&#x5668;&#x5F88;&#x5C0F;&#x3002;&#x4F7F;&#x7528;P-code&#x89E3;&#x91CA;&#x5668;&#x8FD0;&#x884C;P-code&#x7248;&#x672C;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5C06;&#x4EFB;&#x610F;Pascal&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#x6210;P-code&#xFF0C;&#x7136;&#x540E;&#x5728;&#x89E3;&#x91CA;&#x5668;&#x4E0A;&#x8FD0;&#x884C;P-code&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x66F4;&#x5FEB;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;Pascal&#x7248;&#x672C;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x751F;&#x6210;&#x672C;&#x5730;&#x53EF;&#x7528;&#x7684;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x6216;&#x673A;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x751F;&#x6210;P-code&#xFF08;&#x8FD9;&#x662F;&#x4E00;&#x9879;&#x6BD4;&#x8F83;&#x56F0;&#x96BE;&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#x3002;&#x6B64;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x4E3E;&#x4E86;&#x2014;&#x2014;&#x901A;&#x8FC7;&#x81EA;&#x8EAB;&#x7F16;&#x8BD1;&#x81EA;&#x8EAB;&#x2014;&#x2014;&#x5B9E;&#x73B0;&#x751F;&#x6210;&#x673A;&#x5668;&#x7801;&#x7248;&#x672C;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF1A;</p>
+<p>&#x63A8;&#x5E7F;&#x4E00;&#x4E0B;&#xFF0C;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x6B63;&#x5728;&#x4E3A;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x6784;&#x5EFA;&#x9996;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;&#x7CFB;&#x7EDF;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;C&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;C&#x8BED;&#x8A00;&#x7684;&#x5B50;&#x96C6;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x65B0;&#x8BED;&#x8A00;&#x7684;&#x5B50;&#x96C6;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5B50;&#x96C6;&#x7684;&#x529F;&#x80FD;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#x3002;&#x4E00;&#x65E6;&#x8FD9;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x5C06;&#x4E4B;&#x524D;&#x7684;C&#x8BED;&#x8A00;&#x7FFB;&#x8BD1;&#x6210;&#x65B0;&#x8BED;&#x8A00;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x8BE5;&#x7F16;&#x8BD1;&#x5668;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x3002;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x7F16;&#x8BD1;&#x5668;&#x4EE5;&#x652F;&#x6301;&#x65B0;&#x8BED;&#x8A00;&#x7684;&#x66F4;&#x591A;&#x529F;&#x80FD;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6B21;&#x81EA;&#x4E3E;&#xFF0C;&#x4E00;&#x76F4;&#x8FD9;&#x6837;&#x91CD;&#x590D;&#x4E0B;&#x53BB;&#xFF0C;&#x6765;&#x652F;&#x6301;&#x66F4;&#x591A;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x201C;&#x81EA;&#x6258;&#x7BA1;&#x201D;&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>DESIGN &amp; IMPLEMENTATION 1.3 The early success of Pascal</p>
+<p>The P-code-based implementation of Pascal, and its use of bootstrapping, are largely responsible for the language&#x2019;s remarkable success in academic circles in the 1970s. No single hardware platform or operating system of that era dominated the computer landscape the way the x86, Linux, and Windows do today<sup><a href="#fn_8" id="reffn_8">8</a></sup>. Wirth&#x2019;s toolkit made it possible to get an implementation of Pascal up and running on almost any platform in a week or so. It was one of the first great successes in system portability.</p>
+</blockquote>
+<ul>
+<li><p>(EXAMPLE 1.16 Compiling interpreted languages)&#x67D0;&#x4E9B;&#x8BED;&#x8A00;&#xFF08;&#x5982;Lisp&#x3001;Prolog&#x3001;Smalltalk&#xFF09;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x5141;&#x8BB8;&#x5EF6;&#x8FDF;&#x7ED1;&#x5B9A;&#xFF0C;&#x8FD9;&#x4E9B;&#x8BED;&#x8A00;&#x901A;&#x5E38;&#x662F;&#x89E3;&#x91CA;&#x578B;&#x8BED;&#x8A00;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E9B;&#x7F16;&#x8BD1;&#x5668;&#x5FC5;&#x987B;&#x80FD;&#x591F;&#x751F;&#x6210;&#x5177;&#x5907;&#x89E3;&#x91CA;&#x529F;&#x80FD;&#x7684;&#x5927;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#xFF0C;&#x6216;&#x8005;&#x751F;&#x6210;&#x8C03;&#x7528;&#x89E3;&#x91CA;&#x529F;&#x80FD;&#x7684;&#x5E93;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x5BF9;&#x4E00;&#x4E9B;&#x76F4;&#x5230;&#x8FD0;&#x884C;&#x65F6;&#x624D;&#x786E;&#x5B9A;&#x7684;&#x51B3;&#x7B56;&#x505A;&#x51FA;&#x5408;&#x7406;&#x7684;&#x5047;&#x8BBE;&#xFF0C;&#x5E76;&#x4EE5;&#x6B64;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x4E9B;&#x5047;&#x8BBE;&#x6210;&#x7ACB;&#xFF0C;&#x90A3;&#x4E48;&#x4EE3;&#x7801;&#x5C06;&#x8FD0;&#x884C;&#x5F97;&#x975E;&#x5E38;&#x5FEB;&#xFF1B;&#x5982;&#x679C;&#x5047;&#x8BBE;&#x4E0D;&#x6210;&#x7ACB;&#xFF0C;&#x90A3;&#x4E48;&#x52A8;&#x6001;&#x68C0;&#x67E5;&#x5C06;&#x53D1;&#x73B0;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x8FD9;&#x65F6;&#x4F1A;&#x8FD4;&#x56DE;&#x89E3;&#x91CA;&#x5668;&#x3002;</p>
+</li>
+<li><p>(EXAMPLE 1.17 Dynamic and just-in-time compilation)&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F16;&#x7A0B;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x4F1A;&#x5C06;&#x7F16;&#x8BD1;&#x5EF6;&#x8FDF;&#x5230;&#x6700;&#x540E;&#x4E00;&#x523B;&#x3002;&#x4F8B;&#x5982;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#xFF08;&#x6BD4;&#x5982;Lisp&#x6216;Prolog&#xFF09;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x8C03;&#x7528;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5C06;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x7FFB;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x8BED;&#x8A00;&#xFF0C;&#x6216;&#x8005;&#x5BF9;&#x7279;&#x5B9A;&#x8F93;&#x5165;&#x96C6;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;Java&#x7684;&#x5B9E;&#x73B0;&#x3002;Java&#x8BED;&#x8A00;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x79CD;&#x72EC;&#x7ACB;&#x4E8E;&#x673A;&#x5668;&#x7684;&#x4E2D;&#x95F4;&#x5F62;&#x5F0F;&#xFF0C;&#x79F0;&#x4E3A;Java&#x5B57;&#x8282;&#x7801;&#x3002;&#x5B57;&#x8282;&#x7801;&#x662F;Java&#x7A0B;&#x5E8F;&#x5206;&#x53D1;&#x7684;&#x6807;&#x51C6;&#x683C;&#x5F0F;&#xFF0C;&#x5B83;&#x4F7F;&#x5F97;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x5728;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x4EFB;&#x4F55;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x6700;&#x65E9;&#x7684;Java&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;&#x5B57;&#x8282;&#x7801;&#x89E3;&#x91CA;&#x5668;&#x3002;&#x73B0;&#x4EE3;&#x5B9E;&#x73B0;&#x5219;&#x901A;&#x8FC7;&#x5728;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x4E4B;&#x524D;&#x5C06;&#x5B57;&#x8282;&#x7801;&#x7FFB;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x83B7;&#x5F97;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF1A;</p>
+  <!-- PICTURE -->
+<p>  C#&#x4E5F;&#x540C;&#x6837;&#x91C7;&#x7528;&#x4E86;&#x5B9E;&#x65F6;&#x7FFB;&#x8BD1;&#x6280;&#x672F;&#x3002;C#&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;CIL&#xFF08;Common Intermediate Language&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x5C06;&#x5176;&#x7FFB;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x3002;CIL&#x72EC;&#x7ACB;&#x4E8E;&#x8BED;&#x8A00;&#xFF0C;&#x56E0;&#x6B64;&#x5404;&#x79CD;&#x7F16;&#x8BD1;&#x5668;&#x524D;&#x7AEF;&#x90FD;&#x53EF;&#x4EE5;&#x751F;&#x6210;CIL&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;16.1&#x8282;&#x4E2D;&#x8BE6;&#x7EC6;&#x63A2;&#x8BA8;Java&#x548C;C&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
+</li>
+<li><p>(EXAMPLE Microcode (firmware))&#x4E00;&#x4E9B;&#x673A;&#x5668;&#xFF08;&#x7279;&#x522B;&#x662F;&#x90A3;&#x4E9B;&#x5728;20&#x4E16;&#x7EAA;80&#x5E74;&#x4EE3;&#x4E2D;&#x671F;&#x4E4B;&#x524D;&#x8BBE;&#x8BA1;&#x7684;&#x673A;&#x5668;&#xFF09;&#x7684;&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x6CA1;&#x6709;&#x5728;&#x786C;&#x4EF6;&#x4E2D;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x89E3;&#x91CA;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#x3002;&#x89E3;&#x91CA;&#x5668;&#x4EE5;&#x79F0;&#x4E3A;&#x5FAE;&#x7801;&#xFF08;&#x6216;&#x56FA;&#x4EF6;&#xFF09;&#x7684;&#x4F4E;&#x7EA7;&#x6307;&#x4EE4;&#x7F16;&#x5199;&#xFF0C;&#x5FAE;&#x7801;&#x5B58;&#x50A8;&#x5728;&#x53EA;&#x8BFB;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#xFF0C;&#x7531;&#x786C;&#x4EF6;&#x6267;&#x884C;&#x3002;5.4.1&#x8282;&#x8FDB;&#x4E00;&#x6B65;&#x8BA8;&#x8BBA;&#x4E86;&#x5FAE;&#x7801;&#x548C;&#x5FAE;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x3002;</p>
+</li>
+</ul>
+<p>&#x524D;&#x9762;&#x8FD9;&#x4E9B;&#x793A;&#x4F8B;&#x8868;&#x660E;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x5C06;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x8F6C;&#x6362;&#x4E3A;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5BF9;&#x4E8E;&#x6709;&#x4E9B;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x6839;&#x672C;&#x4E0D;&#x4F1A;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x7A0B;&#x5E8F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x50CF;TEX&#x8FD9;&#x6837;&#x7684;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x5316;&#x7A0B;&#x5E8F;&#x4F1A;&#x5C06;&#x6587;&#x6863;&#x63CF;&#x8FF0;&#x7F16;&#x8BD1;&#x6210;&#x6FC0;&#x5149;&#x6253;&#x5370;&#x673A;&#x6216;&#x7167;&#x6392;&#x673A;&#x7684;&#x547D;&#x4EE4;&#xFF1B;&#xFF08;&#x8BB8;&#x591A;&#x6FC0;&#x5149;&#x6253;&#x5370;&#x673A;&#x672C;&#x8EAB;&#x5305;&#x542B;Postscript&#x9875;&#x9762;&#x63CF;&#x8FF0;&#x8BED;&#x8A00;&#x7684;&#x89E3;&#x91CA;&#x5668;&#x3002;&#xFF09;&#x6570;&#x636E;&#x5E93;&#x7CFB;&#x7EDF;&#x4F1A;&#x5C06;SQL&#x7B49;&#x67E5;&#x8BE2;&#x8BED;&#x8A00;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF1B;&#x751A;&#x81F3;&#x6709;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5C06;&#x903B;&#x8F91;&#x7535;&#x8DEF;&#x8F6C;&#x6362;&#x4E3A;&#x8BA1;&#x7B97;&#x673A;&#x82AF;&#x7247;&#x7684;&#x7167;&#x7247;&#x63A9;&#x6A21;&#x3002;&#x867D;&#x7136;&#x672C;&#x4E66;&#x7684;&#x91CD;&#x70B9;&#x662F;&#x547D;&#x4EE4;&#x5F0F;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x4E00;&#x79CD;&#x975E;&#x5E73;&#x51E1;&#x8BED;&#x8A00;&#x7FFB;&#x8BD1;&#x5230;&#x53E6;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#xFF0C;&#x5E76;&#x5145;&#x5206;&#x5206;&#x6790;&#x8F93;&#x5165;&#x7684;&#x542B;&#x4E49;&#x7684;&#x8FC7;&#x7A0B;&#x90FD;&#x79F0;&#x4E3A;&#x201C;&#x7F16;&#x8BD1;&#x201D;&#x3002;</p>
+<blockquote id="fn_8">
+<sup>8</sup>. &#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x672F;&#x8BED;&#x201C;x86&#x201D;&#x6765;&#x6307;&#x4EE3;Intel 8086&#x53CA;&#x5176;&#x540E;&#x4EE3;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF0C;&#x5305;&#x62EC;Pentium&#x3001;Core&#x548C;Xeon&#x5904;&#x7406;&#x5668;&#x3002;Intel&#x79F0;&#x8FD9;&#x79CD;&#x67B6;&#x6784;&#x4E3A;IA-32&#xFF0C;&#x4F46;x86&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x901A;&#x7528;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x5B83;&#x4E5F;&#x5305;&#x542B;&#x4E86;AMD&#x7B49;&#x7ADE;&#x4E89;&#x5BF9;&#x624B;&#x7684;&#x4EA7;&#x54C1;&#x3002;<a href="#reffn_8" title="Jump back to footnote [8] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-3.html" class="navigation navigation-prev " aria-label="Previous page: 1.3 为什么学习程序设计语言">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1-5.html" class="navigation navigation-next " aria-label="Next page: 1.5 编程环境">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.4 编译器和解释器","level":"1.4.1.4","depth":3,"next":{"title":"1.5 编程环境","level":"1.4.1.5","depth":3,"path":"part1/ch1/1-5.md","ref":"part1/ch1/1-5.md","articles":[]},"previous":{"title":"1.3 为什么学习程序设计语言","level":"1.4.1.3","depth":3,"path":"part1/ch1/1-3.md","ref":"part1/ch1/1-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"descrption":"Programming Language Pragmatics Fourth Edtion 中文版","theme":"default","author":"Michael L. Scott","margin":{"right":30,"left":30,"top":30,"bottom":50},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-0-12-410409-9","variables":{},"title":"程序设计语言 实践之路（第四版）","language":"zh-hans","gitbook":"*","direction":"ltr"},"file":{"path":"part1/ch1/1-4.md","mtime":"2022-06-27T15:41:12.095Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-27T15:41:17.520Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,418 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2 程序设计语言族谱 · 程序设计语言 实践之路（第四版）</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Michael L. Scott">
+        <meta name="identifier" content="978-0-12-410409-9" scheme="ISBN">
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1-3.html" />
+    
+    
+    <link rel="prev" href="1-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    关于本书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../foreword.html">
+            
+                <a href="../../foreword.html">
+            
+                    
+                    序言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../preface.html">
+            
+                <a href="../../preface.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第1部分 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第1章 绪论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    1.1 程序设计语言设计的艺术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    1.2 程序设计语言族谱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="1-3.html">
+            
+                <a href="1-3.html">
+            
+                    
+                    1.3 为什么学习程序设计语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="1-4.html">
+            
+                <a href="1-4.html">
+            
+                    
+                    1.4 编译器和解释器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="1-5.html">
+            
+                <a href="1-5.html">
+            
+                    
+                    1.5 编程环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >1.2 程序设计语言族谱</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="12-&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x8BED;&#x8A00;&#x65CF;&#x8C31;">1.2 &#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x8BED;&#x8A00;&#x65CF;&#x8C31;</h1>
+<p>(EXAMPLE 1.3 Classification of programming languages)&#x73B0;&#x6709;&#x7684;&#x8BB8;&#x591A;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x8BED;&#x8A00;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5B83;&#x4EEC;&#x7684;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002;&#x56FE;1.1&#x663E;&#x793A;&#x4E86;&#x4E00;&#x7EC4;&#x5E38;&#x89C1;&#x7684;&#x5206;&#x7C7B;&#xFF0C;&#x8FD9;&#x79CD;&#x5206;&#x7C7B;&#x533A;&#x5206;&#x4E86;&#x58F0;&#x660E;&#x5F0F;&#x8BED;&#x8A00;&#x548C;&#x547D;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#xFF0C;&#x58F0;&#x660E;&#x5F0F;&#x8BED;&#x8A00;&#x7684;&#x91CD;&#x70B9;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x8981;&#x505A;&#x4EC0;&#x4E48;&#xFF0C;&#x547D;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#x7684;&#x91CD;&#x70B9;&#x662F;&#x5173;&#x4E8E;&#x8BA1;&#x7B97;&#x673A;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#x3002;</p>
+<!-- PICTURE -->
+<p>Figure 1.1 Classification of programming languages. Note that the categories are fuzzy, and open to debate. In particular, it is possible for a functional language to be object-oriented, and many authors do not consider functional programming to be declarative.</p>
+<p>&#x58F0;&#x660E;&#x5F0F;&#x8BED;&#x8A00;&#x5728;&#x67D0;&#x79CD;&#x610F;&#x4E49;&#x4E0A;&#x662F;&#x201C;&#x66F4;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x201D;&#xFF1B;&#x5B83;&#x4EEC;&#x66F4;&#x7B26;&#x5408;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x4E0D;&#x592A;&#x7B26;&#x5408;&#x5B9E;&#x73B0;&#x8005;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;&#xFF0C;&#x7136;&#x800C;&#x547D;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#x5360;&#x4E3B;&#x5BFC;&#x5730;&#x4F4D;&#x4E3B;&#x8981;&#x662F;&#x51FA;&#x4E8E;&#x6027;&#x80FD;&#x539F;&#x56E0;&#x3002;&#x58F0;&#x660E;&#x5F0F;&#x8BED;&#x8A00;&#x7684;&#x8BBE;&#x8BA1;&#x4E2D;&#x5B58;&#x5728;&#x7740;&#x4E00;&#x79CD;&#x5BF9;&#x7ACB;&#x89C2;&#x70B9;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x5E0C;&#x671B;&#x6446;&#x8131;&#x201C;&#x4E0D;&#x76F8;&#x5173;&#x201D;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x9700;&#x8981;&#x4E0E;&#x7EC6;&#x8282;&#x4FDD;&#x6301;&#x8DB3;&#x591F;&#x7684;&#x63A5;&#x8FD1;&#xFF0C;&#x81F3;&#x5C11;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x7B97;&#x6CD5;&#x7684;&#x5927;&#x7EB2;&#xFF0C;&#x6BD5;&#x7ADF;&#x9AD8;&#x6548;&#x7B97;&#x6CD5;&#x7684;&#x8BBE;&#x8BA1;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x7684;&#x91CD;&#x8981;&#x5185;&#x5BB9;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x4E0D;&#x6E05;&#x695A;&#x7F16;&#x8BD1;&#x5668;&#x80FD;&#x591F;&#x5728;&#x591A;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x548C;&#x5728;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x9886;&#x57DF;&#x4E2D;&#x80FD;&#x591F;&#x4E3A;&#x9AD8;&#x62BD;&#x8C61;&#x7EA7;&#x522B;&#x7684;&#x95EE;&#x9898;&#x53D1;&#x73B0;&#x597D;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x627E;&#x4E0D;&#x5230;&#x597D;&#x7B97;&#x6CD5;&#x7684;&#x9886;&#x57DF;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x7A0B;&#x5E8F;&#x5458;&#x80FD;&#x591F;&#x663E;&#x5F0F;&#x5730;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x58F0;&#x660E;&#x5F0F;&#x548C;&#x547D;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#x5BB6;&#x65CF;&#x4E2D;&#xFF0C;&#x6709;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x5B50;&#x5BB6;&#x65CF;&#xFF1A;</p>
+<ul>
+<li><p><em>&#x51FD;&#x6570;&#x5F0F;</em>&#x8BED;&#x8A00;&#x91C7;&#x7528;&#x57FA;&#x4E8E;&#x51FD;&#x6570;&#x9012;&#x5F52;&#x5B9A;&#x4E49;&#x7684;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#xFF0C;&#x8FD9;&#x79CD;&#x601D;&#x60F3;&#x6765;&#x81EA;lambda&#x6F14;&#x7B97;&#xFF0C;&#x8FD9;&#x662F;Alonzo Church&#x5728;20&#x4E16;&#x7EAA;30&#x5E74;&#x4EE3;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x79CD;&#x6B63;&#x5219;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x3002;&#x4ECE;&#x672C;&#x8D28;&#x4E0A;&#x8BB2;&#xFF0C;&#x7A0B;&#x5E8F;&#x88AB;&#x89C6;&#x4E3A;&#x4ECE;&#x8F93;&#x5165;&#x5230;&#x8F93;&#x51FA;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x901A;&#x8FC7;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x3002;&#x8FD9;&#x7C7B;&#x8BED;&#x8A00;&#x5305;&#x62EC;Lisp&#x3001;ML&#x548C;Haskell&#x3002;</p>
+</li>
+<li><p><em>&#x6570;&#x636E;&#x6D41;</em>&#x8BED;&#x8A00;&#x5C06;&#x8BA1;&#x7B97;&#x5EFA;&#x6A21;&#x4E3A;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x4FE1;&#x606F;&#x6D41;&#xFF08;token&#xFF09;&#x3002;&#x5B83;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x7684;&#x5E76;&#x884C;&#x6A21;&#x578B;&#xFF1A;&#x8282;&#x70B9;&#x7531;&#x8F93;&#x5165;token&#x89E6;&#x53D1;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5E76;&#x53D1;&#x64CD;&#x4F5C;&#x3002;Id&#x548C;Val&#x662F;&#x6570;&#x636E;&#x6D41;&#x8BED;&#x8A00;&#xFF0C;Sisal&#x7531;Val&#x53D1;&#x5C55;&#x800C;&#x6765;&#xFF0C;&#x4F46;&#x5B83;&#x901A;&#x5E38;&#x88AB;&#x8BA4;&#x4E3A;&#x4E3A;&#x4E00;&#x79CD;&#x51FD;&#x6570;&#x5F0F;&#x8BED;&#x8A00;&#x3002;</p>
+</li>
+<li><p><em>&#x903B;&#x8F91;&#x5F0F;</em>&#x6216;<em>&#x57FA;&#x4E8E;&#x7EA6;&#x675F;&#x7684;</em>&#x8BED;&#x8A00;&#x6765;&#x6E90;&#x4E8E;&#x8C13;&#x8BCD;&#x903B;&#x8F91;&#x3002;&#x4ED6;&#x4EEC;&#x5C06;&#x8BA1;&#x7B97;&#x5EFA;&#x6A21;&#x4E3A;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x903B;&#x8F91;&#x89C4;&#x5219;&#x5BF9;&#x76EE;&#x6807;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#xFF0C;&#x4EE5;&#x6B64;&#x8BD5;&#x56FE;&#x627E;&#x5230;&#x6EE1;&#x8DB3;&#x7279;&#x5B9A;&#x5173;&#x7CFB;&#x7684;&#x503C;&#x3002;Prolog&#x662F;&#x6700;&#x8457;&#x540D;&#x7684;&#x903B;&#x8F91;&#x8BED;&#x8A00;&#x3002;&#x8FD9;&#x7C7B;&#x8BED;&#x8A00;&#x6709;&#x65F6;&#x4E5F;&#x5305;&#x62EC;SQL&#x6570;&#x636E;&#x5E93;&#x8BED;&#x8A00;&#x3001;XSLT&#x811A;&#x672C;&#x8BED;&#x8A00;&#x4EE5;&#x53CA;&#x53EF;&#x7F16;&#x7A0B;&#x7535;&#x5B50;&#x8868;&#x683C;&#xFF0C;&#x4F8B;&#x5982;Excel&#x53CA;&#x5176;&#x524D;&#x8EAB;&#x3002;</p>
+</li>
+<li><p><em>Von Neumann</em>&#x8BED;&#x8A00;&#x53EF;&#x80FD;&#x662F;&#x4F7F;&#x7528;&#x6700;&#x5E7F;&#x6CDB;&#x7684;&#x8BED;&#x8A00;&#x3002;&#x5B83;&#x4EEC;&#x5305;&#x62EC;Fortran&#x3001;Ada&#x3001;C&#x4EE5;&#x53CA;&#x6240;&#x6709;&#x4EE5;&#x4FEE;&#x6539;&#x53D8;&#x91CF;&#x4E3A;&#x57FA;&#x672C;&#x8BA1;&#x7B97;&#x624B;&#x6BB5;&#x7684;&#x8BED;&#x8A00;<sup><a href="#fn_7" id="reffn_7">7</a></sup>&#x3002;&#x51FD;&#x6570;&#x5F0F;&#x8BED;&#x8A00;&#x57FA;&#x4E8E;&#x5177;&#x6709;&#x503C;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x800C;von Neumann&#x8BED;&#x8A00;&#x5219;&#x57FA;&#x4E8E;&#x4F7F;&#x7528;&#x8BED;&#x53E5;&#xFF08;&#x7279;&#x522B;&#x662F;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#xFF09;&#x6765;&#x4FEE;&#x6539;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4EE5;&#x6B64;&#x5BF9;&#x540E;&#x7EED;&#x7684;&#x8BA1;&#x7B97;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#x3002;</p>
+</li>
+<li><p><em>&#x9762;&#x5411;&#x5BF9;&#x8C61;</em>&#x8BED;&#x8A00;&#x53EF;&#x8FFD;&#x6EAF;&#x5230;Simula 67&#x3002;&#x8FD9;&#x4E9B;&#x8BED;&#x8A00;&#x5927;&#x591A;&#x6570;&#x90FD;&#x4E0E;von Neumann&#x8BED;&#x8A00;&#x5BC6;&#x5207;&#x76F8;&#x5173;&#xFF0C;&#x4F46;&#x5728;&#x5185;&#x5B58;&#x548C;&#x8BA1;&#x7B97;&#x65B9;&#x9762;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x7ED3;&#x6784;&#x5316;&#x548C;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x6A21;&#x578B;&#x3002;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x5C06;&#x8BA1;&#x7B97;&#x63CF;&#x8FF0;&#x4E3A;&#x534A;&#x72EC;&#x7ACB;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x7BA1;&#x7406;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x5B50;&#x4F8B;&#x7A0B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C06;&#x8BA1;&#x7B97;&#x63CF;&#x8FF0;&#x4E3A;&#x5904;&#x7406;&#x5668;&#x5728;&#x5185;&#x5B58;&#x4E0A;&#x7684;&#x64CD;&#x4F5C;&#x3002;Smalltalk&#x662F;&#x6700;&#x7EAF;&#x7CB9;&#x7684;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#xFF0C;&#x800C;C++&#x548C;Java&#x53EF;&#x80FD;&#x662F;&#x4F7F;&#x7528;&#x6700;&#x5E7F;&#x6CDB;&#x7684;&#x3002;&#x4E5F;&#x5B58;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x8BED;&#x8A00;&#xFF08;&#x5176;&#x4E2D;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F;CLOS[Kee89]&#x548C;OCaml&#xFF09;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x5F80;&#x5F80;&#x5177;&#x6709;&#x5F88;&#x5F3A;&#x7684;&#x547D;&#x4EE4;&#x5F0F;&#x98CE;&#x683C;&#x3002;</p>
+</li>
+<li><p><em>&#x811A;&#x672C;</em>&#x8BED;&#x8A00;&#x5F3A;&#x8C03;&#x534F;&#x8C03;&#x6216;&#x5C06;&#x5468;&#x56F4;&#x7684;&#x73AF;&#x5883;&#x201C;&#x7C98;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x201D;&#x3002;&#x4E00;&#x4E9B;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x6700;&#x521D;&#x662F;&#x4E3A;&#x7279;&#x5B9A;&#x76EE;&#x7684;&#x5F00;&#x53D1;&#x7684;&#xFF1A;csh&#x548C;bash&#x7528;&#x4E8E;&#x4F5C;&#x4E1A;&#x63A7;&#x5236;&#xFF08;shell&#xFF09;&#x7A0B;&#x5E8F;&#x7684;&#x8F93;&#x5165;&#x8BED;&#x8A00;&#xFF1B;PHP&#x548C;JavaScript&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x52A8;&#x6001;web&#x5185;&#x5BB9;&#xFF1B;Lua&#x88AB;&#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x7535;&#x8111;&#x6E38;&#x620F;&#x3002;&#x5176;&#x5B83;&#x8BED;&#x8A00;&#xFF0C;&#x5305;&#x62EC;Perl&#x3001;Python&#x548C;Ruby&#xFF0C;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x901A;&#x7528;&#x6027;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x5F3A;&#x8C03;&#x5FEB;&#x901F;&#x539F;&#x578B;&#x8BBE;&#x8BA1;&#xFF0C;&#x6240;&#x4EE5;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x6613;&#x4E8E;&#x8868;&#x8FBE;&#x800C;&#x975E;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6709;&#x4EBA;&#x53EF;&#x80FD;&#x4F1A;&#x8BA4;&#x4E3A;&#x5E76;&#x53D1;&#xFF08;&#x5E76;&#x884C;&#xFF09;&#x8BED;&#x8A00;&#x4F1A;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5BB6;&#x65CF;&#xFF08;&#x672C;&#x4E66;&#x6709;&#x4E00;&#x7AE0;&#x4E13;&#x95E8;&#x8BA8;&#x8BBA;&#x6B64;&#x7C7B;&#x8BED;&#x8A00;&#xFF09;&#xFF0C;&#x4F46;&#x5E76;&#x53D1;&#x548C;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#x4E0E;&#x4E0A;&#x8FF0;&#x5206;&#x7C7B;&#x65E0;&#x5173;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5E76;&#x53D1;&#x7A0B;&#x5E8F;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684;&#x5E93;&#x6216;&#x7F16;&#x8BD1;&#x5668;&#x4EE5;&#x53CA;Fortran&#x6216;C&#x7B49;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x3002;&#x4E00;&#x4E9B;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x5305;&#x62EC;Java&#x3001;C#&#x548C;Ada&#xFF0C;&#x90FD;&#x5177;&#x6709;&#x660E;&#x786E;&#x7684;&#x5E76;&#x53D1;&#x529F;&#x80FD;&#x3002;&#x7814;&#x7A76;&#x8005;&#x6B63;&#x5728;&#x8C03;&#x67E5;&#x8FD9;&#x91CC;&#x63D0;&#x5230;&#x7684;&#x6BCF;&#x4E2A;&#x5BB6;&#x65CF;&#x4E2D;&#x7684;&#x5E76;&#x53D1;&#x6027;&#x3002;</p>
+<p>&#x4EE5;&#x672C;&#x7AE0;&#x5F00;&#x5934;&#x4ECB;&#x7ECD;&#x7684;&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;&#xFF08;GCD&#xFF09;&#x95EE;&#x9898;&#x4F5C;&#x4E3A;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x5BB6;&#x65CF;&#x95F4;&#x5BF9;&#x6BD4;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;von Neumann&#x3001;&#x51FD;&#x6570;&#x5F0F;&#x6216;&#x903B;&#x8F91;&#x5F0F;&#x8BED;&#x8A00;&#x4E0D;&#x4EC5;&#x4F1A;&#x5F71;&#x54CD;&#x4EE3;&#x7801;&#x7684;&#x5916;&#x89C2;&#xFF0C;&#x4E5F;&#x4F1A;&#x5F71;&#x54CD;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;&#x3002;(EXAMPLE 1.4 GCD function in C)Von Neumann&#x7248;&#x672C;&#x7684;&#x7B97;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>To compute the gcd of a and b, check to see if a and b are equal. If so, print one of them and stop. Otherwise, replace the larger one by their difference and repeat.</p>
+</blockquote>
+<p>&#x7B97;&#x6CD5;&#x7684;C&#x8BED;&#x8A00;&#x8868;&#x793A;&#x5982;&#x56FE;1.2&#x7684;&#x4E0A;&#x90E8;&#x5206;&#x6240;&#x793A;&#x3002;</p>
+<p>(EXAMPLE 1.5 GCD function in OCaml)&#x5728;&#x51FD;&#x6570;&#x5F0F;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#x8F93;&#x51FA;&#x4E0E;&#x8F93;&#x5165;&#x4E4B;&#x95F4;&#x7684;&#x6570;&#x5B66;&#x5173;&#x7CFB;&#xFF1A;</p>
+<blockquote>
+<p>The gcd of a and b is defined to be (1) a when a and b are equal, (2) the gcd of b and a - b when a &gt; b, and (3) the gcd of a and b - a when b &gt; a. To compute the gcd of a given pair of numbers, expand and simplify this definition until it terminates.</p>
+</blockquote>
+<p>&#x7B97;&#x6CD5;&#x7684;OCaml&#x7248;&#x672C;&#x663E;&#x793A;&#x5982;&#x56FE;1.2&#x7684;&#x4E2D;&#x95F4;&#x90E8;&#x5206;&#x6240;&#x793A;&#x3002;&#x5173;&#x952E;&#x5B57;<code>let</code>&#x5F15;&#x5165;&#x5B9A;&#x4E49;&#xFF1B;<code>rec</code>&#x8868;&#x793A;&#x5141;&#x8BB8;&#x9012;&#x5F52;&#xFF08;&#x81EA;&#x5F15;&#x7528;&#xFF09;&#xFF1B;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4F4D;&#x4E8E;&#x540D;&#x79F0;&#xFF08;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;<code>gcd</code>&#xFF09;&#x548C;&#x7B49;&#x53F7;&#x4E4B;&#x95F4;&#x3002;</p>
+<p>(EXAMPLE 1.6 GCD rules in Prolog)&#x5728;&#x903B;&#x8F91;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x4E00;&#x7EC4;&#x516C;&#x7406;&#x548C;&#x8BC1;&#x660E;&#x89C4;&#x5219;&#x6765;&#x8BA9;&#x7CFB;&#x7EDF;&#x627E;&#x5230;&#x6240;&#x9700;&#x7684;&#x503C;&#xFF1A;</p>
+<blockquote>
+<p>The proposition gcd(a, b, g) is true if (1) a, b, and g are all equal; (2) a is greater than b and there exists a number c such that c is a - b and gcd(c, b, g) is true; or (3) a is less than b and there exists a number c such that c is b - a and gcd(c, a, g) is true. To compute the gcd of a given pair of numbers, search for a number g (and various numbers c) for which these rules allow one to prove that gcd(a, b, g) is true.</p>
+</blockquote>
+<p>&#x7B97;&#x6CD5;&#x7684;Prolog&#x7248;&#x672C;&#x5982;&#x56FE;1.2&#x7684;&#x5E95;&#x90E8;&#x6240;&#x793A;&#xFF0C;&#x9700;&#x8981;&#x5C06;<code>:-</code>&#x7406;&#x89E3;&#x4E3A;<code>if</code>&#x3001;&#x5C06;<code>,</code>&#x7406;&#x89E3;&#x4E3A;<code>and</code>&#x3002;</p>
+<p>&#x5E94;&#x8BE5;&#x5F3A;&#x8C03;&#x7684;&#x662F;&#xFF0C;&#x8BED;&#x8A00;&#x5BB6;&#x65CF;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#x5E76;&#x4E0D;&#x660E;&#x786E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;von Neumann&#x548C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x7684;&#x5212;&#x5206;&#x901A;&#x5E38;&#x975E;&#x5E38;&#x6A21;&#x7CCA;&#xFF0C;&#x8BB8;&#x591A;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x4E5F;&#x662F;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x3002;&#x5927;&#x591A;&#x6570;&#x51FD;&#x6570;&#x5F0F;&#x8BED;&#x8A00;&#x548C;&#x903B;&#x8F91;&#x5F0F;&#x8BED;&#x8A00;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x5F0F;&#x529F;&#x80FD;&#xFF0C;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#x4E5F;&#x6DFB;&#x52A0;&#x4E86;&#x51FD;&#x6570;&#x5F0F;&#x529F;&#x80FD;&#x3002;&#x4E0A;&#x8FF0;&#x63CF;&#x8FF0;&#x65E8;&#x5728;&#x63CF;&#x8FF0;&#x8BED;&#x8A00;&#x5BB6;&#x65CF;&#x7684;&#x4E00;&#x822C;&#x98CE;&#x683C;&#xFF0C;&#x800C;&#x4E0D;&#x63D0;&#x4F9B;&#x6B63;&#x5F0F;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x672C;&#x4E66;&#x66F4;&#x591A;&#x5173;&#x6CE8;&#x547D;&#x4EE4;&#x5F0F;&#x8BED;&#x8A00;&#xFF0C;&#x5305;&#x62EC;von Neumann&#x8BED;&#x8A00;&#x548C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x8BB8;&#x591A;&#x95EE;&#x9898;&#x8DE8;&#x8D8A;&#x4E86;&#x8BED;&#x8A00;&#x5BB6;&#x65CF;&#x754C;&#x9650;&#xFF0C;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x8BFB;&#x8005;&#x5C06;&#x5728;&#x672C;&#x4E66;&#x7684;&#x5927;&#x591A;&#x6570;&#x7AE0;&#x8282;&#x4E2D;&#x53D1;&#x73B0;&#x8BB8;&#x591A;&#x9002;&#x7528;&#x4E8E;&#x66FF;&#x4EE3;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x7684;&#x95EE;&#x9898;&#x3002;&#x7B2C;11&#x7AE0;&#x5230;&#x7B2C;14&#x7AE0;&#x5305;&#x542B;&#x5173;&#x4E8E;&#x51FD;&#x6570;&#x5F0F;&#x3001;&#x903B;&#x8F91;&#x5F0F;&#x3001;&#x5E76;&#x53D1;&#x548C;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x7684;&#x5176;&#x4ED6;&#x6750;&#x6599;&#x3002;</p>
+<pre><code class="lang-C"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{                             <span class="hljs-comment">// C</span>
+    <span class="hljs-keyword">while</span> (a != b) {
+        <span class="hljs-keyword">if</span> (a &gt; b) a = a - b;
+        <span class="hljs-keyword">else</span> b = b - a;
+    }
+    <span class="hljs-keyword">return</span> a;
+}
+</code></pre>
+<pre><code class="lang-OCaml"><span class="hljs-keyword">let</span> <span class="hljs-keyword">rec</span> gcd a b =                                   <span class="hljs-comment">(* OCaml *)</span>
+    <span class="hljs-keyword">if</span> a = b <span class="hljs-keyword">then</span> a
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> a &gt; b <span class="hljs-keyword">then</span> gcd b (a - b)
+    <span class="hljs-keyword">else</span> gcd a (b - a)
+</code></pre>
+<pre><code class="lang-Prolog">    gcd(<span class="hljs-symbol">A</span>,<span class="hljs-symbol">B</span>,<span class="hljs-symbol">G</span>) :- <span class="hljs-symbol">A</span> = <span class="hljs-symbol">B</span>, <span class="hljs-symbol">G</span> = <span class="hljs-symbol">A</span>.                     <span class="hljs-comment">% Prolog</span>
+    gcd(<span class="hljs-symbol">A</span>,<span class="hljs-symbol">B</span>,<span class="hljs-symbol">G</span>) :- <span class="hljs-symbol">A</span> &gt; <span class="hljs-symbol">B</span>, <span class="hljs-symbol">C</span> is <span class="hljs-symbol">A</span>-<span class="hljs-symbol">B</span>, gcd(<span class="hljs-symbol">C</span>,<span class="hljs-symbol">B</span>,<span class="hljs-symbol">G</span>).
+    gcd(<span class="hljs-symbol">A</span>,<span class="hljs-symbol">B</span>,<span class="hljs-symbol">G</span>) :- <span class="hljs-symbol">B</span> &gt; <span class="hljs-symbol">A</span>, <span class="hljs-symbol">C</span> is <span class="hljs-symbol">B</span>-<span class="hljs-symbol">A</span>, gcd(<span class="hljs-symbol">C</span>,<span class="hljs-symbol">A</span>,<span class="hljs-symbol">G</span>).
+</code></pre>
+<!-- PICTURE -->
+<p>&#x56FE;1.2 The GCD algorithm in C (top), OCaml (middle), and Prolog (bottom). All three versions assume (without checking) that their inputs are positive integers.</p>
+<blockquote id="fn_7">
+<sup>7</sup>. John von Neumann&#xFF08;1903-1957&#xFF09;&#x662F;&#x6570;&#x5B66;&#x5BB6;&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x5BB6;&#xFF0C;&#x4ED6;&#x63D0;&#x51FA;&#x548C;&#x5F00;&#x53D1;&#x4E86;&#x5B58;&#x50A8;&#x7A0B;&#x5E8F;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x5927;&#x591A;&#x6570;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x57FA;&#x7840;&#x3002;&#x5728;&#x5B58;&#x50A8;&#x7A0B;&#x5E8F;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x548C;&#x6570;&#x636E;&#x90FD;&#x8868;&#x793A;&#x4E3A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4F4D;&#xFF0C;&#x5904;&#x7406;&#x5668;&#x53CD;&#x590D;&#x7684;&#x6267;&#x884C;&#x53D6;&#x6307;&#x3001;&#x8BD1;&#x7801;&#x548C;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x3002;<a href="#reffn_7" title="Jump back to footnote [7] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-1.html" class="navigation navigation-prev " aria-label="Previous page: 1.1 程序设计语言设计的艺术">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1-3.html" class="navigation navigation-next " aria-label="Next page: 1.3 为什么学习程序设计语言">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2 程序设计语言族谱","level":"1.4.1.2","depth":3,"next":{"title":"1.3 为什么学习程序设计语言","level":"1.4.1.3","depth":3,"path":"part1/ch1/1-3.md","ref":"part1/ch1/1-3.md","articles":[]},"previous":{"title":"1.1 程序设计语言设计的艺术","level":"1.4.1.1","depth":3,"path":"part1/ch1/1-1.md","ref":"part1/ch1/1-1.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"descrption":"Programming Language Pragmatics Fourth Edtion 中文版","theme":"default","author":"Michael L. Scott","margin":{"right":30,"left":30,"top":30,"bottom":50},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"978-0-12-410409-9","variables":{},"title":"程序设计语言 实践之路（第四版）","language":"zh-hans","gitbook":"*","direction":"ltr"},"file":{"path":"part1/ch1/1-2.md","mtime":"2022-06-27T15:41:12.095Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-27T15:41:17.520Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
